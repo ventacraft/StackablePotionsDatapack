@@ -1,0 +1,6 @@
+{
+  "values": [
+    "potion_stack:update_blocks",
+    "potion_stack:tick"
+  ]
+}
