@@ -1,0 +1,3 @@
+$execute if items block ~ ~ ~ container.$(slot) minecraft:potion run item modify block ~ ~ ~ container.$(slot) potion_stack:make_stackable_no_cooldown
+$execute if items block ~ ~ ~ container.$(slot) minecraft:splash_potion run item modify block ~ ~ ~ container.$(slot) potion_stack:make_stackable_cooldown
+$execute if items block ~ ~ ~ container.$(slot) minecraft:lingering_potion run item modify block ~ ~ ~ container.$(slot) potion_stack:make_stackable_no_cooldown
