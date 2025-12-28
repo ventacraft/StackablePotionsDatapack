@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "has_potion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:potion",
+              "minecraft:splash_potion",
+              "minecraft:lingering_potion"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "potion_stack:update_inventory"
+  }
+}
