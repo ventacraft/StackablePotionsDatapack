@@ -1,4 +1,11 @@
-# 1. Force check the items in the player's hands (Weapon slots)
+# Fix containers the player is looking at (up to 5 blocks away)
+execute as @a at @s anchored eyes positioned ^ ^ ^1 run function potion_stack:fix_chest
+execute as @a at @s anchored eyes positioned ^ ^ ^2 run function potion_stack:fix_chest
+execute as @a at @s anchored eyes positioned ^ ^ ^3 run function potion_stack:fix_chest
+execute as @a at @s anchored eyes positioned ^ ^ ^4 run function potion_stack:fix_chest
+execute as @a at @s anchored eyes positioned ^ ^ ^5 run function potion_stack:fix_chest
+
+# 1. Update Main and off hand
 execute as @a if items entity @s weapon.mainhand minecraft:potion run item modify entity @s weapon.mainhand potion_stack:make_stackable_no_cooldown
 execute as @a if items entity @s weapon.mainhand minecraft:splash_potion run item modify entity @s weapon.mainhand potion_stack:make_stackable_cooldown
 execute as @a if items entity @s weapon.mainhand minecraft:lingering_potion run item modify entity @s weapon.mainhand potion_stack:make_stackable_cooldown
@@ -7,12 +14,12 @@ execute as @a if items entity @s weapon.offhand minecraft:potion run item modify
 execute as @a if items entity @s weapon.offhand minecraft:splash_potion run item modify entity @s weapon.offhand potion_stack:make_stackable_cooldown
 execute as @a if items entity @s weapon.offhand minecraft:lingering_potion run item modify entity @s weapon.offhand potion_stack:make_stackable_cooldown
 
-# 2. Force check the Cursor (for when you are clicking items)
+#  Update Cursor
 execute as @a if items entity @s player.cursor minecraft:potion run item modify entity @s player.cursor potion_stack:make_stackable_no_cooldown
 execute as @a if items entity @s player.cursor minecraft:splash_potion run item modify entity @s player.cursor potion_stack:make_stackable_cooldown
 execute as @a if items entity @s player.cursor minecraft:lingering_potion run item modify entity @s player.cursor potion_stack:make_stackable_cooldown
 
-# 3. Force check the Hotbar Slots 0-8 specifically
+# 3Update slot 0-8
 execute as @a run function potion_stack:apply_macro {slot:0}
 execute as @a run function potion_stack:apply_macro {slot:1}
 execute as @a run function potion_stack:apply_macro {slot:2}
@@ -23,6 +30,6 @@ execute as @a run function potion_stack:apply_macro {slot:6}
 execute as @a run function potion_stack:apply_macro {slot:7}
 execute as @a run function potion_stack:apply_macro {slot:8}
 
-# 4. Safety & Other updates
+# Other Updates
 function potion_stack:update_blocks
 advancement revoke @a only potion_stack:update_potions
