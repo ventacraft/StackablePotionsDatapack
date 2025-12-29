@@ -1,3 +1,7 @@
+# Actually, the most reliable way for Datapacks is to execute at the player:
+execute as @a at @s anchored eyes positioned ^ ^ ^5 run function potion_stack:check_container
+execute as @a at @s run function potion_stack:check_container
+
 # Update potions inside brewing stands
 execute at @a run item modify block ~ ~ ~ container.0 potion_stack:make_stackable_no_cooldown
 execute at @a run item modify block ~ ~ ~ container.1 potion_stack:make_stackable_no_cooldown
